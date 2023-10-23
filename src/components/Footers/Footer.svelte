@@ -6,7 +6,11 @@
 		<div class="footer-content">
 			<div class="footer-social">
 				<div class="tooltip">
-					<a href="https://www.linkedin.com/Tedfulk/" target="_blank" rel="noreferrer">
+					<a
+						href="https://www.linkedin.com/in/ted-fulk-4068491b1/"
+						target="_blank"
+						rel="noreferrer"
+					>
 						<img src="img/linkedin-img.jpg" alt="linkedin" class="social-icon" />
 						<span class="tooltiptext">LinkedIn</span>
 					</a>

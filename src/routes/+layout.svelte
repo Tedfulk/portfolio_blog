@@ -5,49 +5,68 @@
 	import Drawer, { AppContent, Content, Header, Subtitle } from '@smui/drawer';
 	import Button, { Label } from '@smui/button';
 	import List, { Item, Text } from '@smui/list';
+	import ChatBubble from '../components/Chatbox/ChatBubble.svelte';
+	import ChatBox from '../components/Chatbox/ChatBox.svelte';
 	import { onMount } from 'svelte';
 
+	let chatOpen = false;
 	let open: boolean = false;
+	let preventClose = false;
 	let active: string;
 	let username: string = 'Ted Fulk';
 	let motto: string = 'Be Penomenal or Be Forgotten';
+	// let chatBoxEl: HTMLElement | null = null;
 
 	let topAppBar: TopAppBar;
 	let darkTheme: boolean | undefined = undefined;
+	// $: console.log('hlp me', chatBoxEl);
 
 	function setActive(value: string) {
 		active = value;
 	}
 
-	onMount(() => {
-		darkTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
-	});
-
-	// Reactive statement to update class when darkTheme changes
-	$: {
-		if (typeof darkTheme !== 'undefined') {
-			document.body.classList.toggle('dark', darkTheme);
-		}
+	function handleOpenChat() {
+		chatOpen = true;
+		preventClose = true;
+		setTimeout(() => {
+			preventClose = false;
+		}, 300);
 	}
+	onMount(() => {
+		console.log('onMount executed');
+
+		// Handle outside click for chat box
+		function handleClickOutside(event) {
+			const chatBoxEl = document.getElementById('chatbox');
+			console.log('chatBoxEl:', chatBoxEl);
+			if (chatBoxEl && !chatBoxEl.contains(event.target) && chatOpen && !preventClose) {
+				chatOpen = false;
+				console.log('chatOpen after click:', chatOpen);
+			}
+		}
+
+		window.addEventListener('click', handleClickOutside);
+
+		return () => {
+			// Cleanup when the component is destroyed
+			window.removeEventListener('click', handleClickOutside);
+		};
+	});
 </script>
 
 <svelte:head>
-	<!-- SMUI Styles -->
-	{#if $darkTheme === 'undefined'}
-		<link rel="stylesheet" href="/smui.css" media="(prefers-color-scheme: light)" />
-		<link rel="stylesheet" href="/smui-dark.css" media="screen and (prefers-color-scheme: dark)" />
-	{:else if darkTheme}
-		<link rel="stylesheet" href="/smui.css" />
-		<link rel="stylesheet" href="/smui-dark.css" media="screen" />
-	{:else}
-		<link rel="stylesheet" href="/smui.css" />
-	{/if}
+	<link rel="stylesheet" href="/smui.css" />
 </svelte:head>
 
 <TopAppBar bind:this={topAppBar} variant="standard" style="background-color:black; z-index: 12;">
 	<Row>
 		<Section class="logo-section">
-			<Button on:click={() => (open = !open)}>
+			<Button
+				on:click={() => {
+					open = !open;
+					setTimeout(() => document.activeElement.blur(), 0);
+				}}
+			>
 				<img src="img/teds_logo_crop.png" alt="logo" class="logo" />
 			</Button>
 			<div class="spacer" />
@@ -56,8 +75,10 @@
 			</Button>
 		</Section>
 		<Section align="end" toolbar>
-			<Button href="blog"><span class="nav-blog">Blog</span></Button>
-			<IconButton
+			<Button href="blog">
+				<Label class="nav-blog" style="color: #f7cb39;">Blog</Label>
+			</Button>
+			<!-- <IconButton
 				on:click={() => {
 					darkTheme = !darkTheme;
 				}}
@@ -70,7 +91,7 @@
 						style="color: #f7cb39;"
 					/>
 				</Icon>
-			</IconButton>
+			</IconButton> -->
 		</Section>
 	</Row>
 </TopAppBar>
@@ -95,6 +116,12 @@
 	<AppContent class="app-content">
 		<div class="main-content">
 			<slot />
+			{#if !chatOpen}
+				<ChatBubble on:openChat={handleOpenChat} />
+			{/if}
+			{#if chatOpen}
+				<ChatBox {darkTheme} />
+			{/if}
 		</div>
 	</AppContent>
 </AutoAdjust>
@@ -130,13 +157,5 @@
 		.spacer {
 			width: 20%;
 		}
-	}
-	.nav-blog {
-		background: linear-gradient(to right, #f8dd7c, #f9b753);
-		-webkit-background-clip: text;
-		-background-clip: text;
-		color: transparent;
-		transition: background 0.5s ease-in-out;
-		display: inline;
 	}
 </style>
