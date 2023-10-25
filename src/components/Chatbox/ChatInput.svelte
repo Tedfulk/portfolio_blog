@@ -1,4 +1,6 @@
 <script lang="ts">
+	import SvgIcon from '@jamescoyle/svelte-icon';
+	import { mdiSendClockOutline, mdiSendOutline } from '@mdi/js';
 	import { createEventDispatcher } from 'svelte';
 	import { darkTheme } from '../../store';
 
@@ -32,9 +34,9 @@
 	/>
 	<button on:click={sendMessage}>
 		{#if $darkTheme}
-			<div style="font-size: 2rem;">📫</div>
-		{:else}
-			<div style="font-size: 2rem;">📬</div>
+			<SvgIcon type="mdi" path={mdiSendOutline}></SvgIcon>
+			{:else}
+			<SvgIcon type="mdi" path={mdiSendOutline} style="color: #1e2021;"></SvgIcon>
 		{/if}
 	</button>
 </div>

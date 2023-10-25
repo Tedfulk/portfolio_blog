@@ -1,4 +1,6 @@
 <script lang="ts">
+	import SvgIcon from '@jamescoyle/svelte-icon';
+	import { mdiTrashCanOutline } from '@mdi/js';
 	import { createEventDispatcher } from 'svelte';
 	import DowloadAction from './DowloadAction.svelte';
 
@@ -13,7 +15,7 @@
 <div class="chat-action-bar">
 	<button on:click={clearChat}>
 		<span class="tooltip">Clear</span>
-		<span class="icon">🗑️</span>
+		<SvgIcon type="mdi" path={mdiTrashCanOutline} style="color: #1e2021;"></SvgIcon>
 	</button>
 	<button>
 		<span class="tooltip">Download</span>
@@ -27,7 +29,7 @@
 		align-items: center;
 		margin-left: auto;
 	}
-	.chat-action-bar .icon {
+	.chat-action-bar {
 		font-size: 20px;
 	}
 	button {

@@ -1,6 +1,9 @@
 <script lang="ts">
+	import { mdiDownloadBoxOutline } from '@mdi/js';
+	import SvgIcon from '@jamescoyle/svelte-icon';
 	import Dialog, { Title, Content, Actions, InitialFocus } from '@smui/dialog';
 	import Button, { Label } from '@smui/button';
+	import IconButton, { Icon } from '@smui/icon-button';
 	import List, { Item, Graphic, Text } from '@smui/list';
 	import Radio from '@smui/radio';
 
@@ -133,14 +136,20 @@
 	</Actions>
 </Dialog>
 
-<Button
+<!-- <Button
 	on:click={() => {
 		open = true;
 		setTimeout(() => document.activeElement.blur(), 0);
 	}}
 >
 	<Label style="font-size: 20px;">📂</Label>
-</Button>
-
+</Button> -->
+<!-- <IconButton
+	on:click={() => {
+		open = true;
+	}}
+	class="material-icons">mdiDownload</IconButton
+> -->
+<SvgIcon type="mdi" path={mdiDownloadBoxOutline} style="color: #1e2021;"></SvgIcon>
 <style>
 </style>
