@@ -4,9 +4,14 @@
 </script>
 
 <div
-	class="blog-container {$darkTheme ? 'light-background light-text' : 'dark-background dark-text'}"
+	class="blog-container {$darkTheme ? 'dark-background light-text' : 'light-background dark-text'}"
 >
-	<h1 class="title" style="padding-bottom: 2rem;">Bot Your Back Blog</h1>
+	<h1
+		class="title {$darkTheme ? 'dark-background light-text' : 'light-background dark-text'}"
+		style="padding-bottom: 2rem;"
+	>
+		Bot Your Back Blog
+	</h1>
 	<ImageGrid />
 </div>
 
@@ -19,7 +24,7 @@
 		text-align: center;
 	}
 	.dark-background {
-		background-color: #000;
+		background-color: #1e2021;
 	}
 
 	.light-background {

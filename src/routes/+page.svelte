@@ -115,7 +115,7 @@
 		? {
 				...baseParticlesConfig,
 				background: {
-					color: '#000'
+					color: '#1e2021'
 				}
 		  }
 		: {
@@ -128,11 +128,11 @@
 				...baseParticlesConfig.particles,
 				links: {
 					...baseParticlesConfig.particles.links,
-					color: $darkTheme ? '#fff' : '#000'
+					color: $darkTheme ? '#fff' : '#1e2021'
 				}
 			},
 			background: {
-				color: $darkTheme ? '#000' : 'whitesmoke'
+				color: $darkTheme ? '#1e2021' : 'whitesmoke'
 			}
 		};
 	}
@@ -195,7 +195,7 @@
 				/>
 			</div>
 			<h3 class={$darkTheme ? 'light-text' : 'dark-text'}>Who I am</h3>
-			<p class="description" style="width: 80%;">
+			<p class="description" style="width: 80%; {$darkTheme ? 'light-text' : 'dark-text'}">
 				In the exciting world of technology, I've discovered my real passion. My adventure started
 				in the realm of real estate, where I honed my skills in the delicate art of negotiation,
 				grasping the importance of understanding clients' needs, and learned the invaluable lesson
@@ -254,7 +254,7 @@
 		/* background-color: #e1e0e0; */
 	}
 	.dark-background {
-		background-color: #000;
+		background-color: #1e2021;
 	}
 
 	.light-background {

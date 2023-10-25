@@ -1,4 +1,3 @@
-<!-- Carousel.svelte -->
 <script>
 	import { onMount } from 'svelte';
 	import Card from '../Cards/Card.svelte';

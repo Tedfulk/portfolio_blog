@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { darkTheme } from '../../store';
 	export let title: string;
 	export let subtitle: string;
 	export let image: string;
@@ -24,7 +25,7 @@
 </script>
 
 <div
-	class="card-container"
+	class="card-container {$darkTheme ? 'dark-text' : 'light-background dark-text'}"
 	on:click={navigateToGithub}
 	on:mouseover={handleMouseOver}
 	on:mouseout={handleMouseOut}
@@ -62,6 +63,16 @@
 		transform: scale(1.05);
 		cursor: pointer;
 	}
+	/* .dark-background {
+		background-color: #1e2021;
+	} */
+
+	.light-background {
+		background-color: whitesmoke;
+	}
+	.dark-text {
+		color: #000;
+	}
 
 	.card-media-16x9 {
 		position: relative;
@@ -87,13 +98,5 @@
 		width: 100%;
 		height: 100%;
 		box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
-	}
-
-	.card-media-16x9 > * {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
 	}
 </style>
