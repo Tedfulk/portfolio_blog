@@ -3,10 +3,13 @@
 	import ChatInput from './ChatInput.svelte';
 	import { afterUpdate } from 'svelte';
 	import ChatActionBar from './ChatActionBar.svelte';
+	import { darkTheme } from '../../store';
+	import { onMount } from 'svelte';
 
-	export let darkTheme: boolean | undefined = undefined;
+	export let chatOpen: boolean;
+	export let preventClose: boolean;
+
 	let messagesContainer;
-	let chatbox;
 
 	afterUpdate(() => {
 		if (messagesContainer) {
@@ -32,24 +35,39 @@
 	function handleClearChat() {
 		messages = [];
 	}
+
+	onMount(() => {
+		function handleClickOutside(event) {
+			const chatBoxEl = document.getElementById('chatbox');
+			if (chatBoxEl && !chatBoxEl.contains(event.target) && chatOpen && !preventClose) {
+				chatOpen = false;
+			}
+		}
+
+		window.addEventListener('click', handleClickOutside);
+
+		return () => {
+			window.removeEventListener('click', handleClickOutside);
+		};
+	});
 </script>
 
 <div
 	id="chatbox"
-	style="background: {darkTheme
+	style="background: {$darkTheme
 		? 'linear-gradient(to bottom, #232120, #D4B886, #B4B4B4)'
 		: 'linear-gradient(to bottom, #b15c11, #005a5a, #ffffff)'}"
 >
 	<div class="chat-header">
 		Ted's assistant
-		<ChatActionBar on:clearChat={handleClearChat} />
+		<ChatActionBar {messages} on:clearChat={handleClearChat} />
 	</div>
 	<div class="messages" bind:this={messagesContainer}>
 		{#each messages as message, index}
 			<Message {message} {index} />
 		{/each}
 	</div>
-	<ChatInput {darkTheme} on:send={handleSend} />
+	<ChatInput on:send={handleSend} />
 </div>
 
 <style>

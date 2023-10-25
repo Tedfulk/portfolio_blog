@@ -2,6 +2,7 @@
 	import { createEventDispatcher } from 'svelte';
 	import DowloadAction from './DowloadAction.svelte';
 
+	export let messages: { role: string; content: string }[] = [];
 	const dispatch = createEventDispatcher();
 
 	function clearChat() {
@@ -16,7 +17,7 @@
 	</button>
 	<button>
 		<span class="tooltip">Download</span>
-		<DowloadAction />
+		<DowloadAction {messages} />
 	</button>
 </div>
 

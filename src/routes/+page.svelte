@@ -1,144 +1,79 @@
 <script>
-	import Button from '@smui/button';
-	import { Title } from '@smui/top-app-bar';
-	import Content from '@smui/card';
-	import Fab from '@smui/fab';
-	import List, { Item, Text } from '@smui/list';
-	import IconButton, { Icon } from '@smui/icon-button';
-
 	import Project from '../components/projects/Project.svelte';
 	import Banner from '../components/Banners/Banner.svelte';
 	import Footer from '../components/Footers/Footer.svelte';
 	import Particles from 'svelte-particles';
 	import { loadFull } from 'tsparticles';
-
-	// let particlesConfig = {
-	// 	number: {
-	// 		value: 80,
-	// 		density: {
-	// 			enable: true,
-	// 			value_area: 800
-	// 		}
-	// 	},
-	// 	color: {
-	// 		value: '#2fe816'
-	// 	},
-	// 	shape: {
-	// 		type: 'polygon',
-	// 		stroke: {
-	// 			width: 0,
-	// 			color: '#000000'
-	// 		},
-	// 		polygon: {
-	// 			nb_sides: 7
-	// 		},
-	// 		image: {
-	// 			src: 'img/github.svg',
-	// 			width: 100,
-	// 			height: 100
-	// 		}
-	// 	},
-	// 	opacity: {
-	// 		value: 0.5,
-	// 		random: false,
-	// 		anim: {
-	// 			enable: false,
-	// 			speed: 1,
-	// 			opacity_min: 0.1,
-	// 			sync: false
-	// 		}
-	// 	},
-	// 	size: {
-	// 		value: 15.783201938177186,
-	// 		random: true,
-	// 		anim: {
-	// 			enable: true,
-	// 			speed: 4.794898228285104,
-	// 			size_min: 0.1,
-	// 			sync: false
-	// 		}
-	// 	},
-	// 	line_linked: {
-	// 		enable: true,
-	// 		distance: 142.0488174435947,
-	// 		color: '#15e5f2',
-	// 		opacity: 0.5366288658980243,
-	// 		width: 1.5783201938177185
-	// 	},
-	// 	move: {
-	// 		enable: true,
-	// 		speed: 6,
-	// 		direction: 'none',
-	// 		random: false,
-	// 		straight: false,
-	// 		out_mode: 'out',
-	// 		bounce: false,
-	// 		attract: {
-	// 			enable: false,
-	// 			rotateX: 600,
-	// 			rotateY: 1200
-	// 		}
-	// 	},
-	// 	interactivity: {
-	// 		detect_on: 'canvas',
-	// 		events: {
-	// 			onhover: {
-	// 				enable: true,
-	// 				mode: 'attract',
-	// 				parallax: { enable: false, force: 60, smooth: 10 }
-	// 			},
-	// 			onclick: {
-	// 				enable: true,
-	// 				mode: 'push'
-	// 			},
-	// 			resize: true
-	// 		},
-	// 		modes: {
-	// 			grab: {
-	// 				distance: 400,
-	// 				line_linked: {
-	// 					opacity: 1
-	// 				}
-	// 			},
-	// 			bubble: {
-	// 				distance: 400,
-	// 				size: 40,
-	// 				duration: 2,
-	// 				opacity: 8,
-	// 				speed: 3
-	// 			},
-	// 			repulse: {
-	// 				distance: 200,
-	// 				duration: 0.4
-	// 			},
-	// 			push: {
-	// 				particles_nb: 4
-	// 			},
-	// 			remove: {
-	// 				particles_nb: 2
-	// 			}
-	// 		}
-	// 	},
-	// 	retina_detect: true
-	// };
-	let particlesConfig = {
+	import { darkTheme } from '../store';
+	let baseParticlesConfig = {
 		particles: {
 			color: {
-				value: '#000'
+				value: '#fcba03'
 			},
 			links: {
 				enable: true,
-				color: '#000'
-			},
-			move: {
-				enable: true
+				color: '#000',
+				distance: 150,
+				opacity: 1,
+				width: 1.5
 			},
 			number: {
-				value: 100
+				value: 120
+			},
+			shape: {
+				type: 'polygon',
+				stroke: {
+					width: 2,
+					color: '#808080'
+				},
+				polygon: {
+					nb_sides: 6
+				}
+			},
+			size: {
+				value: 6,
+				random: true,
+				anim: {
+					enable: true,
+					speed: 10,
+					size_min: 1,
+					sync: false
+				}
+			},
+			opacity: {
+				value: 1,
+				random: false,
+				anim: {
+					enable: false,
+					speed: 1,
+					opacity_min: 0.1,
+					sync: false
+				}
+			},
+			line_linked: {
+				enable: true,
+				distance: 150,
+				color: '#fcba03',
+				opacity: 1,
+				width: 1
+			},
+			move: {
+				enable: true,
+				speed: 2,
+				direction: 'none',
+				random: false,
+				straight: false,
+				out_mode: 'out',
+				bounce: false,
+				attract: {
+					enable: false,
+					rotateX: 600,
+					rotateY: 1200
+				}
 			}
 		},
 		interactivity: {
-			detect_on: 'canvas',
+			detect_on: 'window',
 			events: {
 				onhover: {
 					enable: true,
@@ -149,28 +84,70 @@
 					enable: true,
 					mode: 'push'
 				},
-				resize: true
+				resize: true,
+				modes: {
+					attract: {
+						distance: 200,
+						duration: 0.4,
+						speed: 5
+					},
+					bubble: {
+						distance: 200,
+						duration: 0.4
+					},
+					push: {
+						quantity: 4
+					},
+					remove: {
+						quantity: 2
+					}
+				},
+				retina_detect: true
 			}
-		}
+		},
+		fullScreen: {
+			enable: false
+		},
+		fps_limit: 60,
+		detectRetina: true
 	};
+	let particlesConfig = $darkTheme
+		? {
+				...baseParticlesConfig,
+				background: {
+					color: '#000'
+				}
+		  }
+		: {
+				...baseParticlesConfig
+		  };
+	$: {
+		particlesConfig = {
+			...baseParticlesConfig,
+			particles: {
+				...baseParticlesConfig.particles,
+				links: {
+					...baseParticlesConfig.particles.links,
+					color: $darkTheme ? '#fff' : '#000'
+				}
+			},
+			background: {
+				color: $darkTheme ? '#000' : 'whitesmoke'
+			}
+		};
+	}
+
 	let onParticlesLoaded = (event) => {
 		const particlesContainer = event.detail.particles;
-
-		// you can use particlesContainer to call all the Container class
-		// (from the core library) methods like play, pause, refresh, start, stop
 	};
 
 	let particlesInit = async (engine) => {
-		// you can use main to customize the tsParticles instance adding presets or custom shapes
-		// this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-		// starting from v2 you can add only the features you need reducing the bundle size
-		//await loadFull(engine);
 		await loadFull(engine);
 	};
 </script>
 
 <Banner />
-<div class="particles-container">
+<div class="particles-container {darkTheme ? 'light-background' : 'dark-background'}">
 	<div class="card-display">
 		<div class="card-container">
 			<div class="card">
@@ -217,7 +194,7 @@
 					class="icon-middle-section"
 				/>
 			</div>
-			<h3>Who I am</h3>
+			<h3 class={$darkTheme ? 'light-text' : 'dark-text'}>Who I am</h3>
 			<p class="description" style="width: 80%;">
 				In the exciting world of technology, I've discovered my real passion. My adventure started
 				in the realm of real estate, where I honed my skills in the delicate art of negotiation,
@@ -255,22 +232,49 @@
 	</div>
 	<Particles
 		id="tsparticles"
-		class="foo bar"
+		class="particle-links"
 		style=""
 		options={particlesConfig}
 		on:particlesLoaded={onParticlesLoaded}
 		{particlesInit}
 	/>
-</div>
 
-<div class="carousel-section">
-	<Project />
-</div>
-<div class="footer">
-	<Footer />
+	<div class="carousel-section">
+		<Project />
+	</div>
+	<div class="footer">
+		<Footer />
+	</div>
 </div>
 
 <style>
+	.particles-container {
+		position: relative;
+		padding-top: 4rem;
+		/* background-color: #e1e0e0; */
+	}
+	.dark-background {
+		background-color: #000;
+	}
+
+	.light-background {
+		background-color: whitesmoke;
+	}
+	.dark-text {
+		color: #000;
+	}
+
+	.light-text {
+		color: whitesmoke;
+	}
+	:global(.particle-links) {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 0;
+	}
 	.card {
 		background-color: #f8f8f8;
 		position: relative;
@@ -280,7 +284,7 @@
 		padding-top: 4.5rem;
 		box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
 		border-radius: 10px;
-		z-index: 11;
+		z-index: 1;
 	}
 
 	.icon-card {
@@ -302,7 +306,7 @@
 		display: flex;
 		justify-content: space-around;
 		align-items: flex-end;
-		margin-top: -6%;
+		margin-top: -10%;
 		margin-left: 10%;
 		margin-right: 10%;
 	}
@@ -331,6 +335,7 @@
 		display: flex;
 		justify-content: space-between;
 		margin-top: 2rem;
+		margin-bottom: 4rem;
 	}
 
 	.profile-text-container,
@@ -341,6 +346,7 @@
 		align-items: center;
 		width: 50%;
 		margin-top: -2rem;
+		z-index: 1;
 	}
 	.header {
 		display: flex;
@@ -379,6 +385,7 @@
 		width: 100%;
 	}
 	.carousel-section {
-		margin-top: 4rem;
+		position: relative;
+		z-index: 1;
 	}
 </style>

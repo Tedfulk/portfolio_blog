@@ -3,15 +3,14 @@
 	export let index = 0;
 	let color;
 
-	// Assuming a maximum of 100 messages.
 	let maxMessages = 100;
 
-	let lightness = 90 - (index / maxMessages) * 30; // This will give a range from 50 (darkest) to 80 (lightest)
+	let lightness = 90 - (index / maxMessages) * 30;
 
 	if (message.role === 'user') {
-		color = `hsl(120, 60%, ${lightness}%)`; // Slightly less saturated Green hue for user
+		color = `hsl(120, 60%, ${lightness}%)`;
 	} else {
-		color = `hsl(210, 60%, ${lightness}%)`; // Slightly less saturated Blue hue for assistant
+		color = `hsl(210, 60%, ${lightness}%)`;
 	}
 </script>
 

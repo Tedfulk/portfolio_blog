@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { mdiWeatherNight, mdiWeatherSunny, mdiAccountCircle } from '@mdi/js';
+	import { mdiWeatherNight, mdiWeatherSunny } from '@mdi/js';
 	import TopAppBar, { Row, Section, Title, AutoAdjust } from '@smui/top-app-bar';
 	import IconButton, { Icon } from '@smui/icon-button';
 	import Drawer, { AppContent, Content, Header, Subtitle } from '@smui/drawer';
@@ -7,19 +7,20 @@
 	import List, { Item, Text } from '@smui/list';
 	import ChatBubble from '../components/Chatbox/ChatBubble.svelte';
 	import ChatBox from '../components/Chatbox/ChatBox.svelte';
-	import { onMount } from 'svelte';
+	import { darkTheme } from '../store';
 
-	let chatOpen = false;
+	let chatOpen: boolean = false;
 	let open: boolean = false;
-	let preventClose = false;
+	let preventClose: boolean = false;
 	let active: string;
 	let username: string = 'Ted Fulk';
 	let motto: string = 'Be Penomenal or Be Forgotten';
-	// let chatBoxEl: HTMLElement | null = null;
 
 	let topAppBar: TopAppBar;
-	let darkTheme: boolean | undefined = undefined;
-	// $: console.log('hlp me', chatBoxEl);
+
+	function toggleTheme() {
+		$darkTheme = !$darkTheme;
+	}
 
 	function setActive(value: string) {
 		active = value;
@@ -32,26 +33,6 @@
 			preventClose = false;
 		}, 300);
 	}
-	onMount(() => {
-		console.log('onMount executed');
-
-		// Handle outside click for chat box
-		function handleClickOutside(event) {
-			const chatBoxEl = document.getElementById('chatbox');
-			console.log('chatBoxEl:', chatBoxEl);
-			if (chatBoxEl && !chatBoxEl.contains(event.target) && chatOpen && !preventClose) {
-				chatOpen = false;
-				console.log('chatOpen after click:', chatOpen);
-			}
-		}
-
-		window.addEventListener('click', handleClickOutside);
-
-		return () => {
-			// Cleanup when the component is destroyed
-			window.removeEventListener('click', handleClickOutside);
-		};
-	});
 </script>
 
 <svelte:head>
@@ -78,20 +59,20 @@
 			<Button href="blog">
 				<Label class="nav-blog" style="color: #f7cb39;">Blog</Label>
 			</Button>
-			<!-- <IconButton
+			<IconButton
 				on:click={() => {
-					darkTheme = !darkTheme;
+					toggleTheme();
 				}}
-				title={darkTheme ? 'Lights on' : 'Lights off'}
+				title={$darkTheme ? 'Lights on' : 'Lights off'}
 			>
 				<Icon tag="svg">
 					<path
 						fill="currentColor"
-						d={darkTheme ? mdiWeatherSunny : mdiWeatherNight}
+						d={$darkTheme ? mdiWeatherSunny : mdiWeatherNight}
 						style="color: #f7cb39;"
 					/>
 				</Icon>
-			</IconButton> -->
+			</IconButton>
 		</Section>
 	</Row>
 </TopAppBar>
@@ -120,7 +101,7 @@
 				<ChatBubble on:openChat={handleOpenChat} />
 			{/if}
 			{#if chatOpen}
-				<ChatBox {darkTheme} />
+				<ChatBox bind:chatOpen bind:preventClose />
 			{/if}
 		</div>
 	</AppContent>

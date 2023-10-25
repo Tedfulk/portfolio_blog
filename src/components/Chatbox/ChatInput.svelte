@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
-	export let darkTheme: boolean | undefined = undefined;
+	import { darkTheme } from '../../store';
 
 	const dispatch = createEventDispatcher();
 
@@ -31,7 +31,7 @@
 		class:is-expanded={isExpanded}
 	/>
 	<button on:click={sendMessage}>
-		{#if darkTheme}
+		{#if $darkTheme}
 			<div style="font-size: 2rem;">📫</div>
 		{:else}
 			<div style="font-size: 2rem;">📬</div>
