@@ -27,6 +27,7 @@
     "@smui/icon-button": "^7.0.0-beta.0",
     "@smui/layout-grid": "^7.0.0-beta.15",
     "@smui/list": "^7.0.0-beta.0",
+    "@smui/radio": "^7.0.0-beta.15",
     "@smui/textfield": "^7.0.0-beta.0",
     "@smui/tooltip": "^7.0.0-beta.15",
     "@smui/top-app-bar": "^7.0.0-beta.0",
@@ -50,7 +51,9 @@
   "dependencies": {
     "@slidy/core": "^3.7.4",
     "@slidy/svelte": "^3.4.2",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "svelte-particles": "^2.12.0",
+    "tsparticles": "^2.12.0"
   },
   "description": "Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).",
   "main": "svelte.config.js",
