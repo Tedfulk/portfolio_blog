@@ -8,12 +8,13 @@
 	import ChatBubble from '../components/Chatbox/ChatBubble.svelte';
 	import ChatBox from '../components/Chatbox/ChatBox.svelte';
 	import { darkTheme } from '../store';
+	import { onMount, onDestroy } from 'svelte';
 
 	let chatOpen: boolean = false;
 	let open: boolean = false;
 	let preventClose: boolean = false;
-	let active: string;
 	let username: string = 'Ted Fulk';
+	let active: string;
 	let motto: string = 'Be Penomenal or Be Forgotten';
 
 	let topAppBar: TopAppBar;
@@ -45,7 +46,6 @@
 			<Button
 				on:click={() => {
 					open = !open;
-					setTimeout(() => document.activeElement.blur(), 0);
 				}}
 			>
 				<img src="img/teds_logo_crop.png" alt="logo" class="logo" />
@@ -77,18 +77,24 @@
 	</Row>
 </TopAppBar>
 <AutoAdjust {topAppBar}>
-	<Drawer variant="modal" bind:open>
+	<Drawer
+		variant="modal"
+		bind:open
+		on:mouseleave={() => {
+			open = !open;
+		}}
+	>
 		<Header>
 			<Title>{username}</Title>
 			<Subtitle>{motto}</Subtitle>
 		</Header>
 		<Content>
 			<List>
-				<Item href="profile" on:click={() => setActive('profile')} activated={active === 'profile'}>
+				<Item href="profile" on:click={() => setActive('profile')} activated={setActive('profile')}>
 					<Text>Profile</Text>
 				</Item>
 
-				<Item href="blog" on:click={() => setActive('blog')} activated={active === 'blog'}>
+				<Item href="blog" on:click={() => setActive('blog')} activated={setActive('blog')}>
 					<Text>Blog</Text>
 				</Item>
 			</List>

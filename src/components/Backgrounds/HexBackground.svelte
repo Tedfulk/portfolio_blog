@@ -12,7 +12,9 @@
 
 <style>
 	.hexagongrid-container {
-		position: relative;
+		position: absolute;
+		top: 0;
+		right: 0;
 		height: 100%;
 		width: 100%;
 		background: rgb(0, 194, 255);
@@ -23,12 +25,13 @@
 			rgba(13, 54, 94, 1) 49%,
 			rgba(0, 18, 36, 1) 100%
 		);
+		z-index: 0;
 	}
 	.tri-state-switch-container {
 		position: absolute;
 		top: 0;
 		right: 0;
-		z-index: 10;
+		z-index: 1;
 		padding-top: 2rem;
 		padding-right: 2rem;
 	}

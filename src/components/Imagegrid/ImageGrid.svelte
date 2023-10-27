@@ -1,10 +1,10 @@
 <script lang="ts">
 	import BlogCard from './../Cards/BlogCard.svelte';
 
-	let itemsPerPage = 3; // Number of items you want to show per page
-	let currentPage = 1; // Start on page 1
+	let itemsPerPage = 3;
+	let currentPage = 1;
 	let pagesPerGroup = 10;
-	let pageGroup = 1; // Start with the first group of
+	let pageGroup = 1;
 
 	let items: { image: string; blogLink: string; title: string; subtitle: string }[] = [
 		{
@@ -267,14 +267,14 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 		grid-gap: 1rem;
-		padding: 1rem;
+		padding-left: 9rem;
 	}
 
 	.pagination {
 		display: flex;
 		justify-content: center;
-		align-items: center;
-		margin-top: 2rem;
+		padding-top: 4.2rem;
+		overflow: hidden;
 	}
 
 	.pagination button {
