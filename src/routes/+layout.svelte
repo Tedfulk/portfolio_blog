@@ -8,7 +8,6 @@
 	import ChatBubble from '../components/Chatbox/ChatBubble.svelte';
 	import ChatBox from '../components/Chatbox/ChatBox.svelte';
 	import { darkTheme } from '../store';
-	import { onMount, onDestroy } from 'svelte';
 
 	let chatOpen: boolean = false;
 	let open: boolean = false;

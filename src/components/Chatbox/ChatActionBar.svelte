@@ -2,7 +2,7 @@
 	import SvgIcon from '@jamescoyle/svelte-icon';
 	import { mdiTrashCanOutline } from '@mdi/js';
 	import { createEventDispatcher } from 'svelte';
-	import DowloadAction from './DowloadAction.svelte';
+	import DownloadAction from './DownloadAction.svelte';
 
 	export let messages: { role: string; content: string }[] = [];
 	const dispatch = createEventDispatcher();
@@ -15,11 +15,11 @@
 <div class="chat-action-bar">
 	<button on:click={clearChat}>
 		<span class="tooltip">Clear</span>
-		<SvgIcon type="mdi" path={mdiTrashCanOutline} style="color: #1e2021;"></SvgIcon>
+		<SvgIcon type="mdi" path={mdiTrashCanOutline} style="color: #1e2021;" />
 	</button>
 	<button>
 		<span class="tooltip">Download</span>
-		<DowloadAction {messages} />
+		<DownloadAction {messages} />
 	</button>
 </div>
 

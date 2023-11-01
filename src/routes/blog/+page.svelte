@@ -17,8 +17,8 @@
 
 <style>
 	.blog-container {
-		padding-top: 3rem;
-		padding-bottom: 3rem;
+		padding-top: 1rem;
+		padding-bottom: 2rem;
 	}
 	.title {
 		text-align: center;

@@ -3,7 +3,6 @@
 	import SvgIcon from '@jamescoyle/svelte-icon';
 	import Dialog, { Title, Content, Actions, InitialFocus } from '@smui/dialog';
 	import Button, { Label } from '@smui/button';
-	import IconButton, { Icon } from '@smui/icon-button';
 	import List, { Item, Graphic, Text } from '@smui/list';
 	import Radio from '@smui/radio';
 
@@ -117,10 +116,12 @@
 		</List>
 	</Content>
 	<Actions>
-		<Button>
-			<Label>Cancel</Label>
+		<Button variant="outlined">
+			<Label style="color: #1e2021;">Cancel</Label>
 		</Button>
 		<Button
+			variant="outlined"
+			color="primary"
 			action="accept"
 			on:click={() => {
 				closeHandler(event);
@@ -131,25 +132,13 @@
 				}
 			}}
 		>
-			<Label>Download</Label>
+			<Label style="color: #1e2021;">Download</Label>
 		</Button>
 	</Actions>
 </Dialog>
+<Button on:click={() => (open = !open)}>
+	<SvgIcon type="mdi" path={mdiDownloadBoxOutline} style="color: #1e2021;" />
+</Button>
 
-<!-- <Button
-	on:click={() => {
-		open = true;
-		setTimeout(() => document.activeElement.blur(), 0);
-	}}
->
-	<Label style="font-size: 20px;">📂</Label>
-</Button> -->
-<!-- <IconButton
-	on:click={() => {
-		open = true;
-	}}
-	class="material-icons">mdiDownload</IconButton
-> -->
-<SvgIcon type="mdi" path={mdiDownloadBoxOutline} style="color: #1e2021;"></SvgIcon>
 <style>
 </style>

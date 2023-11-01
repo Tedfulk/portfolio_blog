@@ -34,9 +34,9 @@
 	/>
 	<button on:click={sendMessage}>
 		{#if $darkTheme}
-			<SvgIcon type="mdi" path={mdiSendOutline}></SvgIcon>
-			{:else}
-			<SvgIcon type="mdi" path={mdiSendOutline} style="color: #1e2021;"></SvgIcon>
+			<SvgIcon type="mdi" path={mdiSendOutline} />
+		{:else}
+			<SvgIcon type="mdi" path={mdiSendOutline} style="color: #1e2021;" />
 		{/if}
 	</button>
 </div>
