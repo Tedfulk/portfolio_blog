@@ -1,38 +1,73 @@
-# create-svelte
+# Table of Contents
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+- [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Components](#components)
+    - [Page](#page)
+    - [Layout](#layout)
+    - [HexBackground](#hexbackground)
+    - [Hexagon](#hexagon)
+    - [ChatBox](#chatbox)
+    - [Carousel](#carousel)
+    - [DownloadAction](#downloadaction)
+  - [Styling](#styling)
 
-## Creating a project
+## Introduction
 
-If you're seeing this, you've probably already done this step. Congrats!
+This project is a Svelte-based portfolio application designed to showcase projects and skills in a visually appealing manner. It includes several custom components like a chatbox, carousel, and interactive hexagon background.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## Installation
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+To install the project, you need to have Node.js installed on your system. Clone the repository and install the dependencies:
 
-## Developing
+\`\`\`bash
+git clone [repository-url]
+cd [repository-name]
+npm install
+\`\`\`
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+To run the project locally, execute:
 
-```bash
-npm run dev
+\`\`\`bash
+npm run dev --open
+\`\`\`
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+## Usage
 
-## Building
+After installation, you can start the development server and begin integrating the components into your own project or modify them as needed.
 
-To create a production version of your app:
+## Components
 
-```bash
-npm run build
-```
+### Page
 
-You can preview the production build with `npm run preview`.
+The \`+page.svelte\` file imports the main components of the project and includes the particles configuration for the background effect.
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+### Layout
+
+The \`+layout.svelte\` file structures the main layout of the portfolio page, defining sections like the header, main content, and footer.
+
+### HexBackground
+
+The \`HexBackground.svelte\` component creates a dynamic hexagon pattern in the background of the page.
+
+### Hexagon
+
+The \`Hexagon.svelte\` component is used within the HexBackground to render individual hexagons.
+
+### ChatBox
+
+The \`ChatBox.svelte\` component provides a chat interface for visitors to leave messages or get in contact.
+
+### Carousel
+
+The \`Carousel.svelte\` component is used to showcase featured projects or skills in a sliding carousel format.
+
+### DownloadAction
+
+The \`DownloadAction.svelte\` component likely allows users to download content, such as a resume or project files.
+
+## Styling
+
+Custom styling is applied through style tags within the components, with the possibility of animations and media queries for responsiveness.
