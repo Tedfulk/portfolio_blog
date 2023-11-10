@@ -35,9 +35,10 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		height: 100vh;
-		width: 100vw;
+		height: 85vh;
+		width: 100%;
 		background-size: contain;
 		background-position: center;
+		overflow: hidden;
 	}
 </style>
