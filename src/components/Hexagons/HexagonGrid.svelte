@@ -327,15 +327,15 @@
 <style>
 	.grid-container {
 		height: 93.15vh;
-		width: 100vw;
+		width: 100%;
 		overflow: hidden;
+		margin: 0 auto;
 	}
 	.far-right-hexagon {
-		margin-top: -5.35%;
+		margin-top: -5.42%;
 		margin-bottom: -1.75%;
-		margin-left: 97.3%;
+		margin-left: 97.2%;
 	}
-
 	@media (max-width: 1800px) {
 		.far-right-hexagon {
 			margin-top: -5.95%;

@@ -7,13 +7,12 @@
 	import List, { Item, Text } from '@smui/list';
 	import ChatBubble from '../components/Chatbox/ChatBubble.svelte';
 	import ChatBox from '../components/Chatbox/ChatBox.svelte';
-	import { darkTheme } from '../store';
+	import { darkTheme, active } from '../store';
 
 	let chatOpen: boolean = false;
 	let open: boolean = false;
 	let preventClose: boolean = false;
 	let username: string = 'Ted Fulk';
-	let active: string;
 	let motto: string = 'Be Penomenal or Be Forgotten';
 
 	let topAppBar: TopAppBar;
@@ -23,7 +22,7 @@
 	}
 
 	function setActive(value: string) {
-		active = value;
+		$active = value;
 	}
 
 	function handleOpenChat() {
@@ -42,17 +41,31 @@
 <TopAppBar bind:this={topAppBar} variant="standard" style="background-color:black; z-index: 12;">
 	<Row>
 		<Section class="logo-section">
-			<Button
-				on:click={() => {
-					open = !open;
-				}}
-			>
-				<img src="img/teds_logo_crop.png" alt="logo" class="logo" />
-			</Button>
-			<div class="spacer" />
-			<Button href="/">
-				<img src="img/teds_name_logo_crop.png" alt="name_logo" class="name_logo" />
-			</Button>
+			{#if $active == 'profile'}
+				<div style="margin-left: 50%; height: inherit" />
+				<div class="spacer" />
+				<Button
+					href="/"
+					on:click={() => {
+						open = !open;
+					}}
+					on:click={() => setActive('/')}
+				>
+					<img src="img/teds_name_logo_crop.png" alt="name_logo" class="name_logo" />
+				</Button>
+			{:else if $active !== 'profile'}
+				<Button
+					on:click={() => {
+						open = !open;
+					}}
+				>
+					<img src="img/teds_logo_crop.png" alt="logo" class="logo" />
+				</Button>
+				<div class="spacer" />
+				<Button href="/" on:click={() => setActive('/')}>
+					<img src="img/teds_name_logo_crop.png" alt="name_logo" class="name_logo" />
+				</Button>
+			{/if}
 		</Section>
 		<Section align="end" toolbar>
 			<Button href="blog">
@@ -76,29 +89,37 @@
 	</Row>
 </TopAppBar>
 <AutoAdjust {topAppBar}>
-	<Drawer
-		variant="modal"
-		bind:open
-		on:mouseleave={() => {
-			open = !open;
-		}}
-	>
-		<Header>
-			<Title>{username}</Title>
-			<Subtitle>{motto}</Subtitle>
-		</Header>
-		<Content>
-			<List>
-				<Item href="profile" on:click={() => setActive('profile')} activated={setActive('profile')}>
-					<Text>Profile</Text>
-				</Item>
+	{#if $active == 'profile'}
+		<div />
+	{:else}
+		<Drawer
+			variant="modal"
+			bind:open
+			on:mouseleave={() => {
+				open = !open;
+			}}
+		>
+			<Header>
+				<Title>{username}</Title>
+				<Subtitle>{motto}</Subtitle>
+			</Header>
+			<Content>
+				<List>
+					<Item
+						href="profile"
+						on:click={() => setActive('profile')}
+						activated={setActive('profile')}
+					>
+						<Text>Profile</Text>
+					</Item>
 
-				<Item href="blog" on:click={() => setActive('blog')} activated={setActive('blog')}>
-					<Text>Blog</Text>
-				</Item>
-			</List>
-		</Content>
-	</Drawer>
+					<Item href="blog" on:click={() => setActive('blog')} activated={setActive('blog')}>
+						<Text>Blog</Text>
+					</Item>
+				</List>
+			</Content>
+		</Drawer>
+	{/if}
 	<AppContent class="app-content">
 		<div class="main-content">
 			<slot />
