@@ -33,6 +33,7 @@
     "@smui/top-app-bar": "^7.0.0-beta.0",
     "@sveltejs/adapter-auto": "^2.0.0",
     "@sveltejs/kit": "^1.5.0",
+    "@types/node-fetch": "^2.6.9",
     "@typescript-eslint/eslint-plugin": "^5.45.0",
     "@typescript-eslint/parser": "^5.45.0",
     "eslint": "^8.28.0",
@@ -53,6 +54,7 @@
     "@slidy/core": "^3.7.4",
     "@slidy/svelte": "^3.4.2",
     "express": "^4.18.2",
+    "openai": "^4.19.0",
     "svelte-grid-responsive": "^1.2.4",
     "svelte-particles": "^2.12.0",
     "tsparticles": "^2.12.0"

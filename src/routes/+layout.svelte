@@ -38,6 +38,9 @@
 	<link rel="stylesheet" href="/smui.css" />
 </svelte:head>
 
+<!-- <pre>
+	{JSON.stringify($page, null, 2)}
+</pre> -->
 <TopAppBar bind:this={topAppBar} variant="standard" style="background-color:black; z-index: 12;">
 	<Row>
 		<Section class="logo-section">

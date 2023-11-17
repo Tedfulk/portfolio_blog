@@ -5,9 +5,11 @@
 	import ChatActionBar from './ChatActionBar.svelte';
 	import { darkTheme } from '../../store';
 	import { onMount } from 'svelte';
+	import { page } from '$app/stores';
 
 	export let chatOpen: boolean;
 	export let preventClose: boolean;
+	$: console.log('openaiData =', $page.data);
 
 	let messagesContainer;
 
@@ -17,21 +19,14 @@
 		}
 	});
 
-	let messages = [
-		{ role: 'user', content: 'Hello!' },
-		{ role: 'assistant', content: 'Hi there! How can I assist you today?' }
-	];
-
+	let messages = [];
+	// { role: 'user', content: 'Hello!' },
+	// { role: 'assistant', content: 'Hi there! How can I assist you today?' }
 	function handleSend(event) {
-		const newMessage = event.detail;
-		messages = [...messages, { role: 'user', content: newMessage }];
-
-		// Simulate assistant reply
-		setTimeout(() => {
-			messages = [...messages, { role: 'assistant', content: 'Here is your reply.' }];
-		}, 1000);
+		messages.push(event.detail);
+		// console.log('messages ', messages);
 	}
-
+	// console.log('messages after handle send = ', messages);
 	function handleClearChat() {
 		messages = [];
 	}
