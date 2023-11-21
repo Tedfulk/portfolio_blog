@@ -215,11 +215,7 @@
 
 		<div class="profile-image-container">
 			<div class="image-card">
-				<img
-					alt="headshot"
-					src="https://tedfulk.com/img/black%20and%20white%20head%20shot.jpeg"
-					class="headshot"
-				/>
+				<img alt="headshot" src="img/headshot-black.jpeg" class="headshot" />
 				<div class="middle-section-img-container">
 					<h4 class="header">Greetings from the digital realm!</h4>
 					<p class="description-img-card">
