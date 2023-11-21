@@ -98,4 +98,6 @@ dist/
 .npmrc
 assets/
 README.html
-
+# ignore img folder
+img/
+static/img/
