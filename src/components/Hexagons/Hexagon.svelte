@@ -1,7 +1,7 @@
 <script>
 	import BoopAction from './BoopAction.svelte';
 	import { onMount } from 'svelte';
-	import { hexagonActionState } from './../../store.js';
+	import { hexagonActionState } from '../../store';
 	let boopParams;
 
 	onMount(() => {

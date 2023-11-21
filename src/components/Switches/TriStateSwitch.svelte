@@ -1,5 +1,5 @@
 <script>
-	import { hexagonActionState } from './../../store.js';
+	import { hexagonActionState } from '../../store';
 	import { onMount } from 'svelte';
 	let position = 'left';
 

@@ -3,13 +3,11 @@
 	import ChatInput from './ChatInput.svelte';
 	import { afterUpdate } from 'svelte';
 	import ChatActionBar from './ChatActionBar.svelte';
-	import { darkTheme } from '../../store';
+	import { darkTheme, messagesList } from '../../store';
 	import { onMount } from 'svelte';
-	import { page } from '$app/stores';
 
 	export let chatOpen: boolean;
 	export let preventClose: boolean;
-	$: console.log('openaiData =', $page.data);
 
 	let messagesContainer;
 
@@ -19,16 +17,41 @@
 		}
 	});
 
-	let messages = [];
-	// { role: 'user', content: 'Hello!' },
-	// { role: 'assistant', content: 'Hi there! How can I assist you today?' }
-	function handleSend(event) {
-		messages.push(event.detail);
-		// console.log('messages ', messages);
+	function handleNewMessage(event) {
+		const userMessage = { role: 'user', content: event.detail.content };
+		messagesList.update((msg) => [...msg, userMessage]);
+		sendMessageToOpenAI(userMessage.content);
 	}
-	// console.log('messages after handle send = ', messages);
+
+	async function sendMessageToOpenAI(content: string) {
+		try {
+			const response = await fetch(
+				'https://api.openai.com/v1/engines/gpt-3.5-turbo-instruct/completions',
+				{
+					method: 'POST',
+					headers: {
+						Authorization: `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`,
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify({
+						prompt: content,
+						max_tokens: 150
+					})
+				}
+			);
+
+			const data = await response.json();
+			const aiMessage = {
+				role: 'assistant',
+				content: data.choices[0].text.trim()
+			};
+			messagesList.update((msg) => [...msg, aiMessage]);
+		} catch (error) {
+			console.error('Error communicating with OpenAI:', error);
+		}
+	}
 	function handleClearChat() {
-		messages = [];
+		messagesList.set([]);
 	}
 
 	onMount(() => {
@@ -55,14 +78,14 @@
 >
 	<div class="chat-header">
 		Ted's assistant
-		<ChatActionBar {messages} on:clearChat={handleClearChat} />
+		<ChatActionBar on:clearChat={handleClearChat} />
 	</div>
 	<div class="messages" bind:this={messagesContainer}>
-		{#each messages as message, index}
+		{#each $messagesList as message, index}
 			<Message {message} {index} />
 		{/each}
 	</div>
-	<ChatInput on:send={handleSend} />
+	<ChatInput on:messageSend={handleNewMessage} />
 </div>
 
 <style>

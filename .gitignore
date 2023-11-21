@@ -91,4 +91,11 @@ dist/
 
 # Prettier
 .prettier
+.prettierrc
+.prettierignore
+.eslintignore
+.eslintrc
+.npmrc
+assets/
 README.html
+

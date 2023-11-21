@@ -1,14 +1,11 @@
 <script lang="ts">
+	import { messagesList } from './../../store';
 	import SvgIcon from '@jamescoyle/svelte-icon';
 	import { mdiTrashCanOutline } from '@mdi/js';
-	import { createEventDispatcher } from 'svelte';
 	import DownloadAction from './DownloadAction.svelte';
 
-	export let messages: { role: string; content: string }[] = [];
-	const dispatch = createEventDispatcher();
-
 	function clearChat() {
-		dispatch('clearChat');
+		messagesList.set([]);
 	}
 </script>
 
@@ -19,7 +16,7 @@
 	</button>
 	<button>
 		<span class="tooltip">Download</span>
-		<DownloadAction {messages} />
+		<DownloadAction />
 	</button>
 </div>
 

@@ -15,9 +15,8 @@
 
 	function sendMessage() {
 		if (message.trim()) {
-			dispatch('send', message);
+			dispatch('messageSend', { content: message });
 			message = '';
-			isExpanded = false;
 		}
 	}
 </script>

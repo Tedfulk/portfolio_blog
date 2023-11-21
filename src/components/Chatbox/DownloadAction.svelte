@@ -5,8 +5,8 @@
 	import Button, { Label } from '@smui/button';
 	import List, { Item, Graphic, Text } from '@smui/list';
 	import Radio from '@smui/radio';
+	import { messagesList } from '../../store';
 
-	export let messages: { role: string; content: string }[] = [];
 	let open = false;
 	let selection = 'TXT';
 	let selected = 'select something.';
@@ -22,7 +22,7 @@
 		let formattedMessages = '';
 		let userMessage = '';
 
-		messages.forEach((message) => {
+		$messagesList.forEach((message) => {
 			let content = message.content.trim();
 
 			if (message.role === 'user') {
@@ -54,7 +54,7 @@
 		let formattedMessages = [];
 		let userMessage = null;
 
-		messages.forEach((message) => {
+		$messagesList.forEach((message) => {
 			let content = message.content.trim();
 
 			if (message.role === 'user') {
