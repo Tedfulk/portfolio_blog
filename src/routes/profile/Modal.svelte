@@ -16,7 +16,7 @@
 				<div class="skills">
 					<strong>Skills:</strong>
 					<ul>
-						<li>Python, Django, React.js, Svelte, Git, AWS, Heroku, fastAPI, PostgreSQL,</li>
+						<li>Python, Django, React.js, Svelte, Git, AWS, Heroku, fastAPI, PostgreSQL</li>
 					</ul>
 				</div>
 				<div class="projects">
@@ -51,10 +51,8 @@
 				<div class="education">
 					<strong>Education:</strong>
 					<ul>
-						<li>
-							Full Stack Engineering at Momentum Learning; BSc in Movement and Sport Science from
-							Purdue University.
-						</li>
+						<li>Full Stack Engineering at Momentum Learning.</li>
+						<li>BS in Movement and Sport Science from Purdue University.</li>
 					</ul>
 				</div>
 				<button class="close-button" on:click={() => (showModal = !showModal)}> Close </button>
@@ -115,7 +113,7 @@
 		color: #333;
 		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 		border-radius: 8px;
-		padding: 1px 20px 16px 20px;
+		padding: 1px 20px 10px 20px;
 		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 		width: 700px;
 		margin: auto;
@@ -123,7 +121,7 @@
 
 	.about-me h2 {
 		text-align: center;
-		font-size: 24px;
+		font-size: 20px;
 		font-weight: bold;
 		margin-bottom: 1rem;
 	}

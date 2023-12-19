@@ -5,11 +5,11 @@
 	import Drawer, { AppContent, Content, Header, Subtitle } from '@smui/drawer';
 	import Button, { Label } from '@smui/button';
 	import List, { Item, Text } from '@smui/list';
-	import ChatBubble from '../components/Chatbox/ChatBubble.svelte';
-	import ChatBox from '../components/Chatbox/ChatBox.svelte';
+	// import ChatBubble from '../components/Chatbox/ChatBubble.svelte';
+	// import ChatBox from '../components/Chatbox/ChatBox.svelte';
 	import { darkTheme, active } from '../store';
 
-	let chatOpen: boolean = false;
+	// let chatOpen: boolean = false;
 	let open: boolean = false;
 	let preventClose: boolean = false;
 	let username: string = 'Ted Fulk';
@@ -25,17 +25,36 @@
 		$active = value;
 	}
 
-	function handleOpenChat() {
-		chatOpen = true;
-		preventClose = true;
-		setTimeout(() => {
-			preventClose = false;
-		}, 300);
-	}
+	// function handleOpenChat() {
+	// 	chatOpen = true;
+	// 	preventClose = true;
+	// 	setTimeout(() => {
+	// 		preventClose = false;
+	// 	}, 300);
+	// }
 </script>
 
 <svelte:head>
 	<link rel="stylesheet" href="/smui.css" />
+	<script defer src="https://openai-widget.web.app/ChatComponent.bundle.js"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			// Check if the chat container exists
+			var chatContainer = document.getElementById('chat-container');
+			// If the chat container doesn't exist, create it
+			if (!chatContainer) {
+				chatContainer = document.createElement('div');
+				chatContainer.id = 'chat-container';
+				document.body.appendChild(chatContainer);
+			}
+			// Initialize the Chat component
+			if (window.ChatComponent) {
+				ChatComponent.init('BtCtVZM62h9J430xMUn9', '#chat-container');
+			} else {
+				console.error('ChatComponent is not available');
+			}
+		});
+	</script>
 </svelte:head>
 
 <TopAppBar bind:this={topAppBar} variant="standard" style="background-color:black; z-index: 12;">
@@ -123,12 +142,12 @@
 	<AppContent class="app-content">
 		<div class="main-content">
 			<slot />
-			{#if !chatOpen}
+			<!-- {#if !chatOpen}
 				<ChatBubble on:openChat={handleOpenChat} />
 			{/if}
 			{#if chatOpen}
 				<ChatBox bind:chatOpen bind:preventClose />
-			{/if}
+			{/if} -->
 		</div>
 	</AppContent>
 </AutoAdjust>
