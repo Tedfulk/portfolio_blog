@@ -87,7 +87,7 @@
 			{/if}
 		</Section>
 		<Section align="end" toolbar>
-			<Button href="blog">
+			<Button href="https://teds-tech-chronicles.netlify.app/">
 				<Label class="nav-blog" style="color: #f7cb39;">Blog</Label>
 			</Button>
 			<IconButton
