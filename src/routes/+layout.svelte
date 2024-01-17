@@ -24,14 +24,6 @@
 	function setActive(value: string) {
 		$active = value;
 	}
-
-	// function handleOpenChat() {
-	// 	chatOpen = true;
-	// 	preventClose = true;
-	// 	setTimeout(() => {
-	// 		preventClose = false;
-	// 	}, 300);
-	// }
 </script>
 
 <svelte:head>
@@ -45,7 +37,10 @@
 			if (!chatContainer) {
 				chatContainer = document.createElement('div');
 				chatContainer.id = 'chat-container';
+				// chatContainer.style.width = '100%';
+				// chatContainer.style.backgroundColor = 'red';
 				document.body.appendChild(chatContainer);
+				// set the width and backgroun-color to red of the chat container
 			}
 			// Initialize the Chat component
 			if (window.ChatComponent) {
@@ -140,24 +135,17 @@
 		</Drawer>
 	{/if}
 	<AppContent class="app-content">
-		<div class="main-content">
-			<slot />
-			<!-- {#if !chatOpen}
+		<slot />
+		<!-- {#if !chatOpen}
 				<ChatBubble on:openChat={handleOpenChat} />
 			{/if}
 			{#if chatOpen}
 				<ChatBox bind:chatOpen bind:preventClose />
 			{/if} -->
-		</div>
 	</AppContent>
 </AutoAdjust>
 
 <style>
-	.main-content {
-		flex-grow: 1;
-		padding: 0;
-		margin: 0;
-	}
 	.logo {
 		margin-left: 20%;
 		height: inherit;

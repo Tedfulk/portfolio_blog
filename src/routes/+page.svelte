@@ -303,8 +303,19 @@
 		justify-content: space-around;
 		align-items: flex-end;
 		margin-top: -10%;
-		margin-left: 10%;
-		margin-right: 10%;
+		flex-wrap: wrap;
+	}
+
+	@media (max-width: 500px) {
+		.card-display {
+			flex-direction: column;
+			align-items: center;
+			margin: 0;
+		}
+
+		.middle-card {
+			margin-top: 50px;
+		}
 	}
 
 	.card-container {
@@ -334,13 +345,29 @@
 		margin-bottom: 4rem;
 	}
 
+	@media (max-width: 500px) {
+		.profile-section {
+			flex-wrap: wrap;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.profile-text-container,
+		.profile-image-container {
+			width: 100%;
+		}
+		.profile-text-container {
+			margin-bottom: 40px;
+		}
+	}
+
 	.profile-text-container,
 	.profile-image-container {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		width: 50%;
+		width: 100%;
 		margin-top: -2rem;
 		z-index: 1;
 	}
