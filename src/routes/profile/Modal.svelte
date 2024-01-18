@@ -30,8 +30,8 @@
 					<strong>Profile:</strong>
 					<ul>
 						<li>
-							Growth-oriented Software Engineer with robust problem-solving skills, adept in
-							full-stack development, and a proven ability to adapt and excel in various industries.
+							Growth-oriented Software Engineer with robust problem-solving skills,<br /> adept in
+							full-stack development, <br /> and a proven ability to adapt and excel in various industries.
 						</li>
 					</ul>
 				</div>
@@ -89,6 +89,16 @@
 		.modal-content {
 			width: 50%;
 			height: 60%;
+		}
+	}
+	@media (max-width: 500px) {
+		.modal-content {
+			width: 90%;
+			height: 80%;
+		}
+		.about-me {
+			width: 100%;
+			font-size: 0.5rem;
 		}
 	}
 	.close-button {
