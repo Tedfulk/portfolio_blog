@@ -127,7 +127,11 @@
 						<Text>Profile</Text>
 					</Item>
 
-					<Item href="blog" on:click={() => setActive('blog')} activated={setActive('blog')}>
+					<Item
+						href="https://teds-tech-chronicles.netlify.app/"
+						on:click={() => setActive('blog')}
+						activated={setActive('blog')}
+					>
 						<Text>Blog</Text>
 					</Item>
 				</List>
