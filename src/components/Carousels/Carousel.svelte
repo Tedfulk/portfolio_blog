@@ -18,8 +18,12 @@
 <div class="carousel">
 	{#each [items[currentItemIndex]] as { image, githubUrl, title, longDescription } (image)}
 		<div class="card-wrapper">
-			<Card {image} {githubUrl} />
-			<CardDetail {title} {longDescription} />
+			<div class="card-image">
+				<Card {image} {githubUrl} />
+			</div>
+			<div class="card-text">
+				<CardDetail {title} {longDescription} />
+			</div>
 		</div>
 	{/each}
 </div>
@@ -46,7 +50,7 @@
 		justify-content: center;
 		align-items: center;
 		height: 100%;
-		overflow: hidden;
+		flex-wrap: wrap;
 	}
 
 	.card-wrapper {
@@ -54,5 +58,16 @@
 		margin-bottom: 34%;
 		gap: 1rem;
 		animation: slide 11s ease-in-out infinite;
+	}
+	@media (max-width: 500px) {
+		.card-wrapper {
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+			margin-bottom: 26%;
+		}
+		.card-image {
+			margin-bottom: 250px;
+		}
 	}
 </style>

@@ -1,346 +1,239 @@
 <script>
-	import Grid from 'svelte-grid-responsive';
 	import Hexagon from './Hexagon.svelte';
 </script>
 
-<div class="grid-container">
-	<Grid container gutter={-10} columns={40}>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-	</Grid>
-	<div style="margin-top: -1.75%; margin-bottom: -1.75%; overflow: hidden;">
-		<Grid container gutter={-10} columns={40}>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<div class="far-right-hexagon">
-				<Grid gutter={-10} columns={40}>
-					<Grid xs={12} md={4} lg={-1} lgOffset={3} mdOffset={3}>
-						<Hexagon />
-					</Grid>
-				</Grid>
-			</div>
-		</Grid>
+<div class="container-of-grid">
+	<div class="grid-container-normal-row">
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
 	</div>
-	<Grid container gutter={-10} columns={40}>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-	</Grid>
-	<div style="margin-top: -1.75%; margin-bottom: -1.75%; overflow: hidden;">
-		<Grid container gutter={-10} columns={40}>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<div class="far-right-hexagon">
-				<Grid gutter={-10} columns={40}>
-					<Grid xs={12} md={4} lg={-1} lgOffset={3} mdOffset={3}>
-						<Hexagon />
-					</Grid>
-				</Grid>
-			</div>
-		</Grid>
+	<div class="grid-container-offset-row">
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
 	</div>
-	<Grid container gutter={-10} columns={40}>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-	</Grid>
-	<div style="margin-top: -1.75%; margin-bottom: -1.75%; overflow: hidden;">
-		<Grid container gutter={-10} columns={40}>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<div class="far-right-hexagon">
-				<Grid gutter={-10} columns={40}>
-					<Grid xs={12} md={4} lg={-1} lgOffset={3} mdOffset={3}>
-						<Hexagon />
-					</Grid>
-				</Grid>
-			</div>
-		</Grid>
+	<div class="grid-container-normal-row">
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
 	</div>
-	<Grid container gutter={-10} columns={40}>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-	</Grid>
-	<div style="margin-top: -1.75%; margin-bottom: -1.75%; overflow: hidden;">
-		<Grid container gutter={-10} columns={40}>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<div class="far-right-hexagon">
-				<Grid gutter={-10} columns={40}>
-					<Grid xs={12} md={4} lg={-1} lgOffset={3} mdOffset={3}>
-						<Hexagon />
-					</Grid>
-				</Grid>
-			</div>
-		</Grid>
+	<div class="grid-container-offset-row">
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
 	</div>
-	<Grid container gutter={-10} columns={40}>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-	</Grid>
-	<div style="margin-top: -1.75%; margin-bottom: -1.75%; overflow: hidden;">
-		<Grid container gutter={-10} columns={40}>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<div class="far-right-hexagon">
-				<Grid gutter={-10} columns={40}>
-					<Grid xs={12} md={4} lg={-1} lgOffset={3} mdOffset={3}>
-						<Hexagon />
-					</Grid>
-				</Grid>
-			</div>
-		</Grid>
+	<div class="grid-container-normal-row">
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
 	</div>
-	<Grid container gutter={-10} columns={40}>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-		<Grid xs={10} md={1} lg={2}><Hexagon /></Grid>
-	</Grid>
-	<div style="margin-top: -1.75%; margin-bottom: -1.75%; overflow: hidden;">
-		<Grid container gutter={-10} columns={40}>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<Grid xs={12} md={4} lg={3} lgOffset={-1} mdOffset={4}><Hexagon /></Grid>
-			<div class="far-right-hexagon">
-				<Grid gutter={-10} columns={40}>
-					<Grid xs={12} md={4} lg={-1} lgOffset={3} mdOffset={3}>
-						<Hexagon />
-					</Grid>
-				</Grid>
-			</div>
-		</Grid>
+	<div class="grid-container-offset-row">
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+	</div>
+	<div class="grid-container-normal-row">
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+	</div>
+	<div class="grid-container-offset-row">
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+	</div>
+	<div class="grid-container-normal-row-2">
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+	</div>
+	<div class="grid-container-offset-row-2">
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+	</div>
+	<div class="grid-container-normal-row-2">
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+	</div>
+	<div class="grid-container-offset-row-2">
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+	</div>
+	<div class="grid-container-normal-row-2">
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+	</div>
+	<div class="grid-container-offset-row-2">
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+	</div>
+	<div class="grid-container-normal-row-2">
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
+		<Hexagon />
 	</div>
 </div>
 
 <style>
-	.grid-container {
-		height: 93.15vh;
+	.container-of-grid {
+		padding-top: 2rem;
+	}
+	.grid-container-normal-row {
+		display: grid;
+		grid-template-columns: repeat(15, 1fr);
+		grid-row-gap: 2rem;
 		width: 100%;
-		overflow: hidden;
-		margin: 0 auto;
+		overflow: clip;
+		margin-top: -1.7rem;
 	}
-	.far-right-hexagon {
-		margin-top: -5.42%;
-		margin-bottom: -1.75%;
-		margin-left: 97.2%;
+	.grid-container-offset-row {
+		display: grid;
+		grid-template-columns: repeat(15, 1fr);
+		width: 100%;
+		overflow: clip;
+		margin-left: 3rem;
+		margin-top: -1.7rem;
 	}
-	@media (max-width: 1800px) {
-		.far-right-hexagon {
-			margin-top: -5.95%;
-			margin-left: 97.15%;
-			margin-bottom: -1.75%;
+	.grid-container-normal-row-2 {
+		opacity: 0;
+		display: none;
+	}
+	.grid-container-offset-row-2 {
+		opacity: 0;
+		display: none;
+	}
+
+	@media (max-width: 500px) {
+		.grid-container-normal-row-2 {
+			opacity: 1;
+			display: grid;
+			grid-template-columns: repeat(5, 1fr);
+			grid-row-gap: 2rem;
+			width: 100%;
+			overflow: clip;
+			margin-top: -1.7rem;
+		}
+		.grid-container-offset-row-2 {
+			opacity: 1;
+			display: grid;
+			grid-template-columns: repeat(5, 1fr);
+			width: 100%;
+			overflow: clip;
+			margin-left: -3rem;
+			margin-top: -1.7rem;
+		}
+		.grid-container-normal-row {
+			opacity: 0;
+			display: none;
+		}
+		.grid-container-offset-row {
+			opacity: 0;
+			display: none;
 		}
 	}
 </style>

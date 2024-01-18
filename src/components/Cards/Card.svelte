@@ -9,7 +9,7 @@
 </script>
 
 <div class="card-display">
-	<div class="card-container" style="height: 10rem; width: 30rem">
+	<div class="card-container" style="height: 10rem; width: 25rem">
 		<Card style="margin: 2rem">
 			<PrimaryAction on:click={navigateToGithub}>
 				<Media

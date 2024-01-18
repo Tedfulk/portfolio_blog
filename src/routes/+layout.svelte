@@ -24,14 +24,6 @@
 	function setActive(value: string) {
 		$active = value;
 	}
-
-	// function handleOpenChat() {
-	// 	chatOpen = true;
-	// 	preventClose = true;
-	// 	setTimeout(() => {
-	// 		preventClose = false;
-	// 	}, 300);
-	// }
 </script>
 
 <svelte:head>
@@ -46,6 +38,7 @@
 				chatContainer = document.createElement('div');
 				chatContainer.id = 'chat-container';
 				document.body.appendChild(chatContainer);
+				// set the width and backgroun-color to red of the chat container
 			}
 			// Initialize the Chat component
 			if (window.ChatComponent) {
@@ -132,7 +125,11 @@
 						<Text>Profile</Text>
 					</Item>
 
-					<Item href="blog" on:click={() => setActive('blog')} activated={setActive('blog')}>
+					<Item
+						href="https://teds-tech-chronicles.netlify.app/"
+						on:click={() => setActive('blog')}
+						activated={setActive('blog')}
+					>
 						<Text>Blog</Text>
 					</Item>
 				</List>
@@ -140,24 +137,17 @@
 		</Drawer>
 	{/if}
 	<AppContent class="app-content">
-		<div class="main-content">
-			<slot />
-			<!-- {#if !chatOpen}
+		<slot />
+		<!-- {#if !chatOpen}
 				<ChatBubble on:openChat={handleOpenChat} />
 			{/if}
 			{#if chatOpen}
 				<ChatBox bind:chatOpen bind:preventClose />
 			{/if} -->
-		</div>
 	</AppContent>
 </AutoAdjust>
 
 <style>
-	.main-content {
-		flex-grow: 1;
-		padding: 0;
-		margin: 0;
-	}
 	.logo {
 		margin-left: 20%;
 		height: inherit;

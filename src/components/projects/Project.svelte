@@ -37,6 +37,11 @@
 		width: 100%;
 		background-size: contain;
 		background-position: center;
-		overflow: hidden;
+		flex-wrap: wrap;
+	}
+	@media (max-width: 500px) {
+		.project-container {
+			height: 150vh;
+		}
 	}
 </style>
