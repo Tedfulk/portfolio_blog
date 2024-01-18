@@ -7,8 +7,8 @@
 <div class="card-display">
 	<div class="card-container" style="height: 10rem; width: 25rem">
 		<Card style="margin: 2rem">
-			<Content style="color: #888; padding=2rem; text-align: center;">{title}</Content>
-			<Content style="color: #888; padding=2rem; ">{@html longDescription}</Content>
+			<Content style="color: #888; text-align: center;">{title}</Content>
+			<Content style="color: #888; ">{@html longDescription}</Content>
 		</Card>
 	</div>
 </div>

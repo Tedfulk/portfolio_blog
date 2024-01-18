@@ -37,8 +37,6 @@
 			if (!chatContainer) {
 				chatContainer = document.createElement('div');
 				chatContainer.id = 'chat-container';
-				// chatContainer.style.width = '100%';
-				// chatContainer.style.backgroundColor = 'red';
 				document.body.appendChild(chatContainer);
 				// set the width and backgroun-color to red of the chat container
 			}
