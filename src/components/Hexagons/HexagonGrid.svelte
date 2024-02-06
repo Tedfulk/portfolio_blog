@@ -1,239 +1,55 @@
 <script>
+	import { onMount } from 'svelte';
 	import Hexagon from './Hexagon.svelte';
+
+	let hexagonsPerRow;
+	let numberOfRows;
+	let hexagonSideLength = 50;
+	let hexagons = [];
+	function calculateHexagons() {
+		const cos30 = Math.cos(Math.PI / 5);
+		const hexagonHeight = hexagonSideLength * cos30 * 4;
+		const hexagonWidth = hexagonSideLength * 2 * cos30;
+
+		const screenWidth = window.innerWidth;
+		const screenHeight = window.innerHeight;
+
+		hexagonsPerRow = Math.floor(screenWidth / hexagonWidth);
+		numberOfRows = Math.floor(screenHeight / (hexagonHeight * 0.5));
+
+		hexagons = Array(numberOfRows)
+			.fill(0)
+			.map(() => Array(hexagonsPerRow).fill(0));
+	}
+
+	onMount(() => {
+		calculateHexagons();
+		window.addEventListener('resize', calculateHexagons);
+		return () => window.removeEventListener('resize', calculateHexagons);
+	});
 </script>
 
 <div class="container-of-grid">
-	<div class="grid-container-normal-row">
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-	</div>
-	<div class="grid-container-offset-row">
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-	</div>
-	<div class="grid-container-normal-row">
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-	</div>
-	<div class="grid-container-offset-row">
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-	</div>
-	<div class="grid-container-normal-row">
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-	</div>
-	<div class="grid-container-offset-row">
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-	</div>
-	<div class="grid-container-normal-row">
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-	</div>
-	<div class="grid-container-offset-row">
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-	</div>
-	<div class="grid-container-normal-row-2">
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-	</div>
-	<div class="grid-container-offset-row-2">
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-	</div>
-	<div class="grid-container-normal-row-2">
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-	</div>
-	<div class="grid-container-offset-row-2">
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-	</div>
-	<div class="grid-container-normal-row-2">
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-	</div>
-	<div class="grid-container-offset-row-2">
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-	</div>
-	<div class="grid-container-normal-row-2">
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-		<Hexagon />
-	</div>
+	{#each hexagons as row, rowIndex}
+		<div class="grid-row {rowIndex % 2 === 1 ? 'offset-row' : ''}">
+			{#each row as hexagon, hexIndex}
+				<Hexagon />
+			{/each}
+		</div>
+	{/each}
 </div>
 
 <style>
 	.container-of-grid {
-		padding-top: 2rem;
+		display: flex;
+		flex-direction: column;
 	}
-	.grid-container-normal-row {
-		display: grid;
-		grid-template-columns: repeat(15, 1fr);
-		grid-row-gap: 2rem;
-		width: 100%;
-		overflow: clip;
-		margin-top: -1.7rem;
+	.grid-row {
+		display: flex;
+		margin-bottom: calc(-50px * 0.5);
 	}
-	.grid-container-offset-row {
-		display: grid;
-		grid-template-columns: repeat(15, 1fr);
-		width: 100%;
-		overflow: clip;
-		margin-left: 3rem;
-		margin-top: -1.7rem;
-	}
-	.grid-container-normal-row-2 {
-		opacity: 0;
-		display: none;
-	}
-	.grid-container-offset-row-2 {
-		opacity: 0;
-		display: none;
-	}
-
-	@media (max-width: 500px) {
-		.grid-container-normal-row-2 {
-			opacity: 1;
-			display: grid;
-			grid-template-columns: repeat(5, 1fr);
-			grid-row-gap: 2rem;
-			width: 100%;
-			overflow: clip;
-			margin-top: -1.7rem;
-		}
-		.grid-container-offset-row-2 {
-			opacity: 1;
-			display: grid;
-			grid-template-columns: repeat(5, 1fr);
-			width: 100%;
-			overflow: clip;
-			margin-left: -3rem;
-			margin-top: -1.7rem;
-		}
-		.grid-container-normal-row {
-			opacity: 0;
-			display: none;
-		}
-		.grid-container-offset-row {
-			opacity: 0;
-			display: none;
-		}
+	.offset-row {
+		margin-left: 50px;
+		margin-bottom: calc(-50px * 0.5);
 	}
 </style>
