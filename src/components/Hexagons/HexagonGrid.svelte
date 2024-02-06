@@ -9,7 +9,7 @@
 	function calculateHexagons() {
 		const cos30 = Math.cos(Math.PI / 5);
 		const hexagonHeight = hexagonSideLength * cos30 * 4;
-		const hexagonWidth = hexagonSideLength * 2 * cos30;
+		const hexagonWidth = hexagonSideLength * 2.4 * cos30;
 
 		const screenWidth = window.innerWidth;
 		const screenHeight = window.innerHeight;
