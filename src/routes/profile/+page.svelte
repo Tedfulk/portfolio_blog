@@ -23,7 +23,7 @@
 <style>
 	.hexagongrid-container {
 		position: relative;
-		height: 100%;
+		height: 94vh;
 		width: 100%;
 		display: flex;
 		justify-content: center;
