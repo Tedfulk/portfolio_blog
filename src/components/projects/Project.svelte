@@ -10,16 +10,16 @@
 
 	const items: ProjectItem[] = [
 		{
-			image: 'img/gmail-clutter.jpeg',
-			githubUrl: 'https://github.com/Tedfulk/gmail',
-			title: 'Helpful Gmail Automation - Python',
+			image: 'img/Dynamic-Blog-Cover.jpg',
+			githubUrl: 'https://github.com/Tedfulk/google_suite',
+			title: 'Helpful Google Automation - Python',
 			longDescription:
-				'Mastering Gmail Automation with Python. 5 easy and simple ways to use the Gmail API to automate your inbox.<br/><br/>' +
+				'Mastering Google Automation with Python. 5 use cases to use the Gmail API and Blogger API.<br/><br/>' +
 				'1. Send emails <br />' +
 				'2. List all emails <br />' +
 				'3. Download one or many emails <br />' +
-				'4. Read and write permissions with labels <br />' +
-				'5. Read and write permissions filtering emails'
+				'4. Create a blog post <br />' +
+				'5. List all blog posts'
 		}
 	];
 </script>
