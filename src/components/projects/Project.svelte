@@ -10,7 +10,7 @@
 
 	const items: ProjectItem[] = [
 		{
-			image: '/img/futuristic-python-gmail.jpg',
+			image: '/img/gmail-clutter.jpeg',
 			githubUrl: 'https://github.com/Tedfulk/google_suite',
 			title: 'Helpful Google Automation - Python',
 			longDescription:
