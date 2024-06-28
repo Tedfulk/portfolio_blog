@@ -196,16 +196,13 @@
 			</div>
 			<h3 class={$darkTheme ? 'light-text' : 'dark-text'}>Who I am</h3>
 			<p class="description" style="width: 80%; {$darkTheme ? 'light-text' : 'dark-text'}">
-				In the exciting world of technology, I've discovered my real passion. My adventure started
-				in the realm of real estate, where I honed my skills in the delicate art of negotiation,
-				grasping the importance of understanding clients' needs, and learned the invaluable lesson
-				of adaptability. These foundational skills laid the groundwork for my journey, and
-				catapulted me into the ever-changing world of software engineering.
+				My adventure started in the realm of real estate, where I practiced the delicate art of negotiation,
+				grasping the importance of understanding the clients needs, and learning the invaluable lesson
+				of adaptability. These foundational skills laid the groundwork for my journey into software engineering.
 			</p>
 			<p class="description" style="width: 80%;">
 				My passion lies at the intersection of web development and artificial intelligence. My
-				journey has equipped me with a strong skill set that encompasses Python, JavaScript, Django,
-				React.js, Svelte, and more. I believe a craftsman is only as good as his tools and how he
+				journey has equipped me with a strong skill set that encompasses Python, JavaScript, and more. I believe a craftsman is only as good as his tools and how he
 				uses them. This toolkit has allowed me to contribute to a variety of projects, from crafting
 				frameworks utilizing the Gmail API to creating conversational AI chatbots. Each project I've
 				had the pleasure of working on serves as a testament to my unwavering commitment to
@@ -217,7 +214,7 @@
 			<div class="image-card">
 				<img alt="headshot" src="img/headshot-black.jpeg" class="headshot" />
 				<div class="middle-section-img-container">
-					<h4 class="header">Greetings from the digital realm!</h4>
+					<h4 class="header">Be Phenomenal Or Be Forgotten!</h4>
 					<p class="description-img-card">
 						I'm a software engineer passionate about web development, AI, and eager to collaborate
 						in tech after transitioning from real estate.
@@ -390,7 +387,7 @@
 		padding-right: 1.5rem;
 		padding-bottom: 1.5rem;
 		max-width: fit-content;
-		color: #4b5563;
+		color: #ffffff;
 	}
 
 	.image-card {
